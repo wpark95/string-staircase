@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.tlglearning","c":"Staircase","l":"buildFibonacciStaircase(int)"},{"p":"com.tlglearning","c":"Staircase","l":"buildLinearStaircase(int)"}]

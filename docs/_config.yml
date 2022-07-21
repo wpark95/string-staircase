@@ -1,0 +1,10 @@
+remote_theme: nickbenn-workshop/just-the-docs
+
+title: String Staircase
+
+aux_links_new_tab: true
+aux_links:
+  Javadocs: "https://nickbenn-workshop.github.io/string-staircase/api/"
+#  Assignment:
+
+children_toc_title: Section contents
