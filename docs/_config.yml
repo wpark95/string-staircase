@@ -4,7 +4,7 @@ title: String Staircase
 
 aux_links_new_tab: true
 aux_links:
-  Javadocs: "https://nickbenn-workshop.github.io/string-staircase/api/"
+  Javadocs: "/api/"
 #  Assignment:
 
 children_toc_title: Section contents

@@ -5,7 +5,6 @@ parent: "Linear staircase"
 ---
 
 {% include abbreviations.md %}
-{% assign javadocs = site.aux_links.Javadocs %}
 
 # {{ page.title }}
 {:.no_toc}
@@ -29,12 +28,12 @@ The implementation **must not** change the modifiers, return type, method name, 
 ## Specifications
 
 1. The value of `height` parameter may be assumed to be in the range 0 to 1,000,000, inclusive. (Your code doesn't need to check for a `height` value outside that range---e.g. to throw an exception.)
+   
+2. The returned `String[]` **must** have exactly `height` elements.
 
-2. The returned `String[]` must have exactly `height` elements.
+3. If `height` is greater than 0, element `0` of the returned array **must** consist of exactly one `*` character, left-padded with `(height - 1)` spaces.
 
-3. If `height` is greater than 0, Element `0` of the returned array must consist of exactly one `*` character, left-padded with `(height - 1)` spaces.
-
-4. The last element of the returned array must consist entirely of `*` characters.
+4. The last element of the returned array **must** consist entirely of `*` characters.
 
 5. The content of each element of the returned array is constructed as follows:  
     
@@ -55,13 +54,11 @@ The implementation **must not** change the modifiers, return type, method name, 
 
     Given the above, we have:
 
-    * The value of the `height` parameter tells us the `length` of the array we need to return.
- 
-    * The `length()` of each of the `String` elements in the array must be equal to `height`.
+    * The `length()` of each of the `String` elements in the array **must be** equal to `height`.
 
-    * The "bottom step" (the last element in the array) consists entirely of asterisk characters. Each step up from that has one fewer asterisk character, and is left-padded with spaces, so that the length of each element is the same---namely, `height` characters.
+    * The "bottom step" (the last element in the array) **must** consist entirely of asterisk characters. Moving from the last element to each previous element, each **must have** one fewer asterisk character, and **must be** left-padded with spaces, so that the length of each element is the same---namely, `height` characters.
 
-For example,
+## Example
 
 ```java
 Staircase.buildLinearStaircase(6)
@@ -88,4 +85,4 @@ would return the staircase shown above as a `String[]`:
 
 3. Whether your code prints anything out is up to you. What it **must** do is return a `String[]` (an array of `String`); printing does not accomplish that.
 
-4. The method to be completed includes a `TODO` comment, intended to make it easy to locate. However, there are two methods---make sure that you implement the above specifications in `buildLinearStaircase`.
+4. The method to be completed includes a `TODO` comment, intended to make it easy to locate. However, there are two methods, so be sure to implement the above specifications in `buildLinearStaircase`.
