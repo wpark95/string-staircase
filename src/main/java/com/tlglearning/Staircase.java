@@ -27,7 +27,17 @@ public final class Staircase {
    * @return       Array of length {@code height}.
    */
   public static String[] buildLinearStaircase(int height) {
-    throw new UnsupportedOperationException("Not yet implemented"); // TODO Implement as specified for LINEAR STAIRCASE.
+    String[] result = new String[height];
+
+    for (int i = 0; i < height; i++) {
+      int spaceNeeded = height - i - 1;
+
+      String curr = " ".repeat(spaceNeeded) + "*".repeat(i + 1);
+
+      result[i] = curr;
+    }
+
+    return result;
   }
 
   /* FIBONACCI STAIRCASE */
