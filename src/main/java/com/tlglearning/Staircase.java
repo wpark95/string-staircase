@@ -30,9 +30,8 @@ public final class Staircase {
     String[] result = new String[height];
 
     for (int i = 0; i < height; i++) {
-      int spaceNeeded = height - i - 1;
-
-      String curr = " ".repeat(spaceNeeded) + "*".repeat(i + 1);
+      int spacesNeeded = height - i - 1;
+      String curr = " ".repeat(spacesNeeded) + "*".repeat(i + 1);
 
       result[i] = curr;
     }
@@ -55,7 +54,34 @@ public final class Staircase {
    * @return       Array of length {@code height}.
    */
   public static String[] buildFibonacciStaircase(int height) {
-    throw new UnsupportedOperationException("Not yet implemented"); // TODO Implement as specified for FIBONACCI STAIRCASE.
+    String[] result = new String[height];
+
+    if (height > 0) {
+      int counter = 1;
+      int prevNum = 0;
+      int currNum = 1;
+      int maxFibonacci = 1;
+
+      while (counter < height) {
+        maxFibonacci = prevNum + currNum;
+        prevNum = currNum;
+        currNum = maxFibonacci;
+        counter++;
+      }
+
+      while (counter > 0) {
+        int starsNeeded = currNum;
+        int spacesNeeded = maxFibonacci - currNum;
+        int temp = currNum - prevNum;
+        String curr = " ".repeat(spacesNeeded) + "*".repeat(starsNeeded);
+
+        currNum = prevNum;
+        prevNum = temp;
+        counter--;
+        result[counter] = curr;
+      }
+    }
+    return result;
   }
 
 }
