@@ -35,7 +35,6 @@ public final class Staircase {
 
       result[i] = curr;
     }
-
     return result;
   }
 
